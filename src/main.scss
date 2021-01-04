@@ -1,0 +1,12 @@
+$titleColor: #dbbfd7;
+$backgroundColor: rgb(23, 17, 56);
+body{
+  color: $titleColor;
+  background: $backgroundColor;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1{
+  text-align: center;
+}
