@@ -1,8 +1,11 @@
 import React from 'react'
+import Typography from '@material-ui/core/Typography'
 
 const Hero = () => {
   return(
-    <h1>Hero</h1>
+    <Typography align='center' variant='h1' color='secondary'>
+      Este Portafolio me va a dar un peguita
+    </Typography>
   )
 }
 
