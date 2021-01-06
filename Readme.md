@@ -28,9 +28,36 @@ Efecto de Vidrio https://codepen.io/32bitkid/details/VYqXZX ojo al scroll
 - Agregar un Front-End
   - Hecho con Material UI React
   - Autorización para eliminar partidas
-  - Mostrar grafica de partidas avandonadas/activas, bots en ejecución y de tiempo para limpieza
+  - Mostrar grafica de partidas avandonadas/activas, 
+    bots en ejecución y de tiempo para limpieza
   - Poner bots a jugar random
   - Administrar bots
 - Agregar soporte a las nuevas pantallas de carga del Front 
 ### Agregar animación con css a Chat App
 
+----------------------------------------------------------------
+Cantata de SantaMaría
+# CazAzuL 04/01
+
+Concurso para pintar la pared: 
+### Objeto con Historia
+### Artefacto que mejor funciona
+### El Mejor material
+
+-[] 
+
+Museo comunitario Virtual:
+
+  De vez en cuando, si el autor se atreve .
+
+  Juego
+  -Laberinto
+  -Ayudar:
+  Primero conocer la situacion. Galleta dice q la gente 
+
+
+### Amigo en la Muni
+
+Distrito 10 coin
+Ñuñoa coin
+Casa Azul coin
