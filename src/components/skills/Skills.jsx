@@ -5,24 +5,29 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import skillsList from './skillsList'
 
 const a11yProps = (index) => {
   return {
-    id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-tabpanel-${index}`,
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
   };
 }
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
     display: 'flex',
-    height: 224,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   tabs: {
-    borderRight: `1px solid ${theme.palette.divider}`,
+    borderTop: `1px solid ${theme.palette.divider}`,
   },
+  indicator: {
+    top: "0px"
+  }
 }));
 
 const Skills = () => {
@@ -35,27 +40,23 @@ const Skills = () => {
 
   return (
     <div className={classes.root}>
+      {skillsList.map( (skill,skillIndex) => {
+          return <TabPanel value={value} index={skillIndex}>{skill.title}</TabPanel>
+        })}
       <Tabs
-        orientation="vertical"
-        variant="scrollable"
+        selectionFollowsFocus 
+        centered
+        variant="fullWidth"
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
         className={classes.tabs}
+        classes={{indicator:classes.indicator}}
       >
-        <Tab label="Item One" {...a11yProps(0)} />
-        <Tab label="Item Two" {...a11yProps(1)} />
-        <Tab label="Item Three" {...a11yProps(2)} />
+        {skillsList.map( (skill,skillIndex) => {
+          return <Tab label={skill.label} {...a11yProps(skillIndex)} />
+        })}
       </Tabs>
-      <TabPanel value={value} index={0}>
-        Item One
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        Item Two
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
-      </TabPanel>
     </div>
   )
 }
@@ -67,8 +68,8 @@ const TabPanel = (props) => {
     <div
       role="tabpanel"
       hidden={value !== index}
-      id={`vertical-tabpanel-${index}`}
-      aria-labelledby={`vertical-tab-${index}`}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
       {value === index && (
@@ -82,8 +83,8 @@ const TabPanel = (props) => {
 
 TabPanel.propTypes = {
   children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
 };
 
 export default Skills

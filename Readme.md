@@ -37,6 +37,7 @@ Efecto de Vidrio https://codepen.io/32bitkid/details/VYqXZX ojo al scroll
 
 ----------------------------------------------------------------
 Cantata de SantaMaría
+
 # CazAzuL 04/01
 
 Concurso para pintar la pared: 
@@ -61,3 +62,5 @@ Museo comunitario Virtual:
 Distrito 10 coin
 Ñuñoa coin
 Casa Azul coin
+
+###
