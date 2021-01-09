@@ -5,7 +5,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import skillsList from './skillsList'
+import data from '../../../data/data'
 
 const a11yProps = (index) => {
   return {
@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
 const Skills = () => {
   const classes = useStyles();
   const [value, setValue] = useState(0);
+  const skillsList = data.skills
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
