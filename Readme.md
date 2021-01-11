@@ -14,13 +14,13 @@ Botón liquido https://codepen.io/electerious/pen/gOOLgjd
 Efecto de Vidrio https://codepen.io/32bitkid/details/VYqXZX ojo al scroll
 
 # Proyectos
-[ ] AlgoViewer https://reverent-jepsen-d6c745.netlify.app/
-[ ] Gato https://laughing-bohr-918a5d.netlify.app/
-[ ] Gato Server https://gato-server.herokuapp.com/ 
-[X] Theme switcher https://cranky-villani-063a08.netlify.app/
-[X] Ip Tracker https://ip-tracker-psi.vercel.app/
-[ ] Chat-App https://festive-bardeen-801143.netlify.app/
-[ ] 
+- [ ] AlgoViewer https://reverent-jepsen-d6c745.netlify.app/
+- [ ] Gato https://laughing-bohr-918a5d.netlify.app/
+- [ ] Gato Server https://gato-server.herokuapp.com/ 
+- [X] Theme switcher https://cranky-villani-063a08.netlify.app/
+- [X] Ip Tracker https://ip-tracker-psi.vercel.app/
+- [ ] Chat-App https://festive-bardeen-801143.netlify.app/
+- [ ] 
 ## Refinar Proyectos:
 ### Gato
 - Agregar pantalla de espera al otro jugador entre partidas
