@@ -23,7 +23,7 @@ const data = {
       company: "Aligare",
       role: "Junior Software Developer",
       constent: {
-        description: "Participé en un proyecto para el Ministerio de Vivienda y Urbanismo",
+        description: "Proyecto para el Ministerio de Vivienda y Urbanismo",
         responsabilities: {
           
         },
