@@ -63,4 +63,8 @@ Distrito 10 coin
 Ñuñoa coin
 Casa Azul coin
 
-###
+### Todo 13/01/2021
+- [ ] Dark Mode File
+- [ ] Languages File
+- [ ] Toggler (Switch)
+- [ ] Settings subMenu

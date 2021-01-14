@@ -1,7 +1,9 @@
-import React from 'react'
-import { AppBar, Button, IconButton, Toolbar, Typography } from '@material-ui/core'
+import React, {useState} from 'react'
+import { AppBar, Button, IconButton, Toolbar, Typography, Hidden } from '@material-ui/core'
 import {makeStyles} from '@material-ui/core/styles'
-import { Description, Menu } from '@material-ui/icons'
+import { Description, Menu, Settings } from '@material-ui/icons'
+import Toggler from './Toggler'
+import SettingsMenu from './SettingsMenu'
 
 const useStyles = makeStyles((theme) => ({
   menuButton: {
@@ -12,24 +14,40 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const navBar = () =>{
+const navBar = ({themeToggler,langToggler}) =>{
   const classes = useStyles()
+  const [ showSettingsMenu, setShowSettingsMenu ] = useState(false);
+
   return(
     <AppBar position='sticky'>
       <Toolbar>
-        <IconButton color='inherit' className={classes.menuButton}>
-          <Menu/>{/*Hamburguer Menu Icon*/}
-        </IconButton>
+        <Hidden smUp>
+          <IconButton color='inherit' className={classes.menuButton}>
+            <Menu/>{/*Hamburguer Menu Icon*/}
+          </IconButton>
+        </Hidden>
         <Typography variant='h6' className={classes.title}>
           Seba Farias
         </Typography>
-        <Button 
-          variant='text' 
-          color='inherit'
-          startIcon={<Description/>}
-        >
-          CV
-        </Button>
+        <Toggler toggledPropetie={themeToggler}/>
+        <Toggler toggledPropetie={langToggler}/>
+        <Hidden xsDown>
+          <Button 
+            variant='text' 
+            color='inherit'
+            startIcon={<Description/>}
+            >
+            CV
+          </Button>
+          <IconButton 
+            color='inherit' 
+            onClick={() => {setShowSettingsMenu( prevState => {
+              return !prevState})}}
+          >
+            <Settings/>
+          </IconButton>
+        </Hidden>
+        {showSettingsMenu && <SettingsMenu themeToggler={themeToggler}langToggler={langToggler}/>}
       </Toolbar>
     </AppBar>
   )
