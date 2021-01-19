@@ -23,14 +23,12 @@ const navBar = ({themeToggler,langToggler}) =>{
       <Toolbar>
         <Hidden smUp>
           <IconButton color='inherit' className={classes.menuButton}>
-            <Menu/>{/*Hamburguer Menu Icon*/}
+            <Menu/>  {/*Hamburguer Menu Icon*/}
           </IconButton>
         </Hidden>
         <Typography variant='h6' className={classes.title}>
           Seba Farias
         </Typography>
-        <Toggler toggledPropetie={themeToggler}/>
-        <Toggler toggledPropetie={langToggler}/>
         <Hidden xsDown>
           <Button 
             variant='text' 

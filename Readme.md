@@ -64,7 +64,7 @@ Distrito 10 coin
 Casa Azul coin
 
 ### Todo 13/01/2021
-- [ ] Dark Mode File
-- [ ] Languages File
-- [ ] Toggler (Switch)
+- [X] Dark Mode File
+- [X] Languages File
+- [X] Toggler (Switch)
 - [ ] Settings subMenu

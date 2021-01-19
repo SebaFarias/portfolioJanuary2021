@@ -3,6 +3,7 @@ import React, {useState, useCallback} from 'react'
 import {ThemeProvider} from '@material-ui/styles'
 import { DARK_THEME, LIGHT_THEME, darkMode } from './themeConfig'
 import LangContext , { ENGLISH, SPANISH, language } from './LanguageConfig'
+import { Paper } from '@material-ui/core'
 import NavBar from './components/navBar/NavBar'
 import SettingsMenu from './components/navBar/SettingsMenu'
 import Hero from './components/hero/Hero'
@@ -32,19 +33,17 @@ const App = () => {
   return (
     <ThemeProvider theme={ darkTheme ? DARK_THEME : LIGHT_THEME }>
       <LangContext.Provider value={ english? ENGLISH : SPANISH }>
-        <NavBar 
-          themeToggler={[ darkTheme, toggleDarkMode ]}
-          langToggler ={[ english, toggleEnglish]}  
-          />
-      <SettingsMenu 
-        themeToggler={[ darkTheme, toggleDarkMode ]}
-        langToggler={[ english, toggleEnglish]}  
-      />
-        <Hero/>
-        <Skills/>
-        <Experience/>
-        <Projects/>
-        <Footer/>
+        <Paper>
+          <NavBar 
+            themeToggler={[ darkTheme, toggleDarkMode ]}
+            langToggler ={[ english, toggleEnglish]}  
+            />
+          <Hero/>
+          <Skills/>
+          <Experience/>
+          <Projects/>
+          <Footer/>
+        </Paper>
       </LangContext.Provider>
     </ThemeProvider>
   )

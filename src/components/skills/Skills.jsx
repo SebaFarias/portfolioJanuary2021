@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
 import data from '../../../data/data'
+import ProjectShower from './ProjectsShower';
+import { 
+  Box,
+  Grid,
+  Paper,
+  Tab,
+  Tabs,
+  Typography
+} from '@material-ui/core';
 
 const a11yProps = (index) => {
   return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
+    id: `skills-tab-${index}`,
+    'aria-controls': `skills-tabpanel-${index}`,
   };
 }
 
@@ -21,6 +26,8 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    margin: '1rem',
+    boxShadow: '10px 5px 5px 10px rgba(0,0,0,0.3)',
   },
   tabs: {
     borderTop: `1px solid ${theme.palette.divider}`,
@@ -40,9 +47,9 @@ const Skills = () => {
   };
 
   return (
-    <div className={classes.root}>
+    <Paper className={classes.root}>
       {skillsList.map( (skill,skillIndex) => {
-          return <TabPanel value={value} index={skillIndex}>{skill.title}</TabPanel>
+          return <TabPanel value={value} index={skillIndex} skill={skill}></TabPanel>
         })}
       <Tabs
         selectionFollowsFocus 
@@ -50,7 +57,7 @@ const Skills = () => {
         variant="fullWidth"
         value={value}
         onChange={handleChange}
-        aria-label="Vertical tabs example"
+        aria-label="Seba Farias's skills"
         className={classes.tabs}
         classes={{indicator:classes.indicator}}
       >
@@ -58,24 +65,33 @@ const Skills = () => {
           return <Tab label={skill.label} {...a11yProps(skillIndex)} />
         })}
       </Tabs>
-    </div>
+    </Paper>
   )
 }
 
 const TabPanel = (props) => {
-  const { children, value, index, ...other } = props;
+  const { skill, value, index, ...other } = props;
 
   return (
     <div
       role="tabpanel"
       hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
+      id={`skills-tabpanel-${index}`}
+      aria-labelledby={`skills-tab-${index}`}
       {...other}
     >
       {value === index && (
         <Box p={3}>
-          <Typography>{children}</Typography>
+          <Typography variant='h2' color='primary' align='center'>Skills</Typography>
+          <Grid container>
+            <Grid container xs={12} sm={6}>
+              <Typography variant='h4' align='left'>{skill.title}</Typography>
+              <Typography variant='body1' align='left'>{skill.content}</Typography>
+            </Grid>
+            <Grid container xs={12} sm={6}>
+              <ProjectShower projects={skill.projects}/>  
+            </Grid>
+          </Grid>
         </Box>
       )}
     </div>

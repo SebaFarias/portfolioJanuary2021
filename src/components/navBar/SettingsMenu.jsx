@@ -31,7 +31,7 @@ const SettingsMenu = ({themeToggler,langToggler}) => {
               />
           </ListItemSecondaryAction>
         </MenuItem>
-        <ListItem>
+        <MenuItem>
           <ListItemIcon>
             <Brightness4 />
           </ListItemIcon>
@@ -42,7 +42,7 @@ const SettingsMenu = ({themeToggler,langToggler}) => {
               inputProps={{ 'aria-labelledby': 'switch-list-label-theme' }}
               />
           </ListItemSecondaryAction>
-        </ListItem>
+        </MenuItem>
       </MenuList>
     </Paper>
   )
