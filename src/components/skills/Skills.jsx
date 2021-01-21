@@ -26,8 +26,8 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    margin: '1rem',
-    boxShadow: '10px 5px 5px 10px rgba(0,0,0,0.3)',
+    margin: '6rem 3px',
+    boxShadow: '0px 15px 5px 10px rgba(0,0,0,0.1)',
   },
   tabs: {
     borderTop: `1px solid ${theme.palette.divider}`,

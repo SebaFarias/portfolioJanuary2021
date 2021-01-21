@@ -22,7 +22,7 @@ const data = {
     {
       company: "Aligare",
       role: "Junior Software Developer",
-      constent: {
+      content: {
         description: "Proyecto para el Ministerio de Vivienda y Urbanismo",
         responsabilities: {
           
@@ -34,7 +34,7 @@ const data = {
     {
       company: "SurtiTech",
       role: "Regional Manager",
-      constent: {
+      content: {
         description: " Surtitech presta el servicio de Telemetría de más de 3.000 centrales de GLP pertenecientes a Abastible a lo largo de todo Chile. Como Regional Manager, estaba a cargo de la operación de las centrales ubicadas entre Arica y Parinacota y la región de El Maule",
         responsabilities: {
           routes: "",
@@ -52,7 +52,7 @@ const data = {
     {
       company: "SurtiTech",
       role: "Instalador",
-      constent: {
+      content: {
         description: " Surtitech presta el servicio de Telemetría de más de 3.000 centrales de GLP pertenecientes a Abastible a lo largo de todo Chile. Como instalador, debía tanto habilitar nuevas centrales para su monitoreo como reparar centrales que no estén transimitendo correctamente la información",
         responsabilities: {
           installer: "Encargado de visitar centrales sin transmisión para identificar la falla en comunicación con un supporter de AIUT(Proveedor de los equipos) y repararla. ",
