@@ -6,12 +6,14 @@ const ENGLISH = {
   settings: "Settings",
   language: "Language",
   darkMode: "Dark Mode",
+  search: "Search",
 }
 const SPANISH = {
   hero:"Este Portafolio me va a dar una peguita",
   settings: "Configuración",
   language: "Lenguaje",
   darkMode: "Modo Oscuro",
+  search: "Búsqueda",
 }
 const language = {
   getLang: () => {

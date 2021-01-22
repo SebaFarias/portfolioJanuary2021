@@ -96,6 +96,7 @@ const Experience = () => {
           <img className={classes.img} src={companyImg[value]}></img>
         </div>
         <Tabs
+          selectionFollowsFocus
           orientation="vertical"
           variant="scrollable"
           value={value}

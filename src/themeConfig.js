@@ -7,7 +7,7 @@ const LIGHT_THEME = createMuiTheme({
 })
 const DARK_THEME = createMuiTheme({
   palette: {
-    primary: purple,
+    primary:purple,
     type: 'dark',
   }
 })
