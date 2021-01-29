@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import LangContext from '../../LanguageConfig'
+import data from '../../../data/data'
 import { Grid, InputAdornment, Paper, TextField, Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import SearchIcon from '@material-ui/icons/Search';
@@ -24,6 +25,8 @@ const Projects = () => {
 
   const lang = useContext(LangContext)
   const classes = useStyles()
+  const projects = data.projects
+
   return (
     <Paper className={classes.root}>
       <Grid container>
@@ -38,8 +41,8 @@ const Projects = () => {
               color='secondary' 
               fullWidth
               InputProps={{
-                startAdornment: (
-                  <InputAdornment position='start'>
+                endAdornment: (
+                  <InputAdornment position='end'>
                     <SearchIcon/>
                   </InputAdornment>
                 ),
@@ -48,7 +51,13 @@ const Projects = () => {
           </div>
         </Grid>
         <Grid container>
-
+          {projects.map( project => {
+            return (
+              <Grid xs={12} sm={6} md={4} lg={3}>
+                <ProjectCard project={project}/>
+              </Grid>
+            )
+          })}
         </Grid>
       </Grid>
     </Paper>
