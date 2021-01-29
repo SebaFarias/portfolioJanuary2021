@@ -29,7 +29,6 @@ const navBar = ({themeToggler,langToggler}) =>{
         <Typography variant='h6' className={classes.title}>
           Seba Farias
         </Typography>
-        <Hidden xsDown>
           <Button 
             variant='text' 
             color='inherit'
@@ -37,6 +36,7 @@ const navBar = ({themeToggler,langToggler}) =>{
             >
             CV
           </Button>
+        <Hidden xsDown>   
           <IconButton 
             color='inherit' 
             onClick={() => {setShowSettingsMenu( prevState => {

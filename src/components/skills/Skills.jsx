@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     margin: '6rem 3px',
+    padding: '4rem 2rem',
     boxShadow: '0px 15px 5px 10px rgba(0,0,0,0.1)',
   },
   tabs: {
@@ -45,26 +46,33 @@ const Skills = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
+  
   return (
     <Paper className={classes.root}>
-      {skillsList.map( (skill,skillIndex) => {
-          return <TabPanel value={value} index={skillIndex} skill={skill}></TabPanel>
-        })}
-      <Tabs
-        selectionFollowsFocus 
-        centered
-        variant="fullWidth"
-        value={value}
-        onChange={handleChange}
-        aria-label="Seba Farias's skills"
-        className={classes.tabs}
-        classes={{indicator:classes.indicator}}
-      >
-        {skillsList.map( (skill,skillIndex) => {
-          return <Tab label={skill.label} {...a11yProps(skillIndex)} />
-        })}
-      </Tabs>
+      <Grid container alignContent='center' justify='center' spacing={2}>
+        <Grid item xs={12}>
+          <Typography variant='h2' color='primary' align='center'>Skills</Typography>
+        </Grid>
+        <Grid item xs={12}>
+          {skillsList.map( (skill,skillIndex) => {
+            return <TabPanel value={value} index={skillIndex} skill={skill}></TabPanel>
+          })}
+          <Tabs
+            selectionFollowsFocus 
+            centered
+            variant="fullWidth"
+            value={value}
+            onChange={handleChange}
+            aria-label="Seba Farias's skills"
+            className={classes.tabs}
+            classes={{indicator:classes.indicator}}
+            >
+            {skillsList.map( (skill,skillIndex) => {
+              return <Tab label={skill.label} {...a11yProps(skillIndex)} />
+            })}
+          </Tabs>
+        </Grid>
+      </Grid>
     </Paper>
   )
 }
@@ -82,7 +90,6 @@ const TabPanel = (props) => {
     >
       {value === index && (
         <Box p={3}>
-          <Typography variant='h2' color='primary' align='center'>Skills</Typography>
           <Grid container>
             <Grid container xs={12} sm={6}>
               <Typography variant='h4' align='left'>{skill.title}</Typography>

@@ -15,11 +15,11 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     margin: '6rem 3px',
-    padding: '4rem 0',
+    padding: '4rem 2rem',
     boxShadow: '0px 15px 5px 10px rgba(0,0,0,0.1)',
     },
     searchBar:{
-      margin: '1rem 2rem',
+      margin: '1rem 0',
     },
 }));
 

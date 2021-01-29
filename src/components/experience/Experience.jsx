@@ -25,7 +25,6 @@ const TabPanel = (props) => {
     >
       {value === index && (
         <Box p={3}>
-          <Typography variant='h4' color='primary' align='center'>Experience</Typography>
           <Grid container>
             <Grid item xs={12} sm={6}>
               <Typography variant='h4' align='left'>{`${experience.role} @ ${experience.company}`}</Typography>
@@ -60,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     display: 'flex',
     margin: '6rem 3px',
+    padding: '4rem 2rem',
     boxShadow: '0px 15px 5px 10px rgba(0,0,0,0.1)',
   },
   tabs: {
@@ -91,27 +91,36 @@ const Experience = () => {
   
   return (
     <Paper className={classes.root}>
-      <div className={classes.leftPanel}>
-        <div className={classes.imgContainer}>
-          <img className={classes.img} src={companyImg[value]}></img>
-        </div>
-        <Tabs
-          selectionFollowsFocus
-          orientation="vertical"
-          variant="scrollable"
-          value={value}
-          onChange={handleChange}
-          aria-label="Experience tabs"
-          className={classes.tabs}
-          >
-          {experienceList.map( ( experience, index ) =>{
-            return <Tab label={experience.company} {...a11yProps(index)} />
+      <Grid container alignContent='center' justify='center' spacing={1}>
+        <Grid item xs={12}>
+          <Typography variant='h2' color='primary' align='center'>Experience</Typography>
+        </Grid>
+        <Grid item xs={2}>
+          <div className={classes.leftPanel}>
+            <div className={classes.imgContainer}>
+              <img className={classes.img} src={companyImg[value]}></img>
+            </div>
+            <Tabs
+              selectionFollowsFocus
+              orientation="vertical"
+              variant="scrollable"
+              value={value}
+              onChange={handleChange}
+              aria-label="Experience tabs"
+              className={classes.tabs}
+              >
+              {experienceList.map( ( experience, index ) =>{
+                return <Tab label={experience.company} {...a11yProps(index)} />
+              })}
+            </Tabs>
+          </div>
+        </Grid>
+        <Grid xs={10}>
+          {experienceList.map( ( experience, index ) => {
+            return <TabPanel value={value} index={index} experience={experience}/>
           })}
-        </Tabs>
-      </div>
-        {experienceList.map( ( experience, index ) => {
-          return <TabPanel value={value} index={index} experience={experience}/>
-        })}
+        </Grid>
+      </Grid>
     </Paper>
   )
 }
