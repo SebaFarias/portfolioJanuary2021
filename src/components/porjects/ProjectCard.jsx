@@ -1,4 +1,5 @@
 import React from 'react'
+import { GitHub, LiveTv } from '@material-ui/icons'
 import { 
   Button,
   Card,
@@ -27,10 +28,10 @@ const ProjectCard = ({ project }) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" startIcon={<GitHub/>}>
           Code
         </Button>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" startIcon={<LiveTv/>}>
           Live
         </Button>
       </CardActions>

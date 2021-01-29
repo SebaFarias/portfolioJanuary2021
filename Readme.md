@@ -68,3 +68,6 @@ Casa Azul coin
 - [X] Languages File
 - [X] Toggler (Switch)
 - [ ] Settings subMenu
+
+352 X 288
+4,20 x 3,55
