@@ -1,3 +1,4 @@
+
 const data = {
   skills: [
     {
@@ -71,6 +72,7 @@ const data = {
       keywords: [],
       stack: [],
       description: "blah, blah, blah, blah, blah, blah, blah",
+      thumbnail: 'https://i.postimg.cc/h4wzfh88/Gato.gif',
     },
     {
       name: "Gato Server",
@@ -79,6 +81,7 @@ const data = {
       keywords: [],
       stack: [],
       description: "blah, blah, blah, blah, blah, blah, blah",
+      thumbnail: 'https://i.postimg.cc/h4wzfh88/Gato.gif',
     },
     {
       name: "Algo Viewer",
@@ -87,6 +90,7 @@ const data = {
       keywords: [],
       stack: [],
       description: "blah, blah, blah, blah, blah, blah, blah",
+      thumbnail: 'https://i.postimg.cc/wB03HBTm/Algo-Viewer.gif',
     },
     {
       name: "Theme switcher",
@@ -95,6 +99,7 @@ const data = {
       keywords: [],
       stack: [],
       description: "blah, blah, blah, blah, blah, blah, blah",
+      thumbnail: 'https://i.postimg.cc/tgX7L6yb/Theme-Switcher.gif',
     },
     {
       name: "Ip Tracker",
@@ -103,6 +108,7 @@ const data = {
       keywords: [],
       stack: [],
       description: "blah, blah, blah, blah, blah, blah, blah",
+      thumbnail: 'https://i.postimg.cc/2SN17JKV/IP-Tracker.gif',
     },
     {
       name: "Chat App",
@@ -111,6 +117,7 @@ const data = {
       keywords: [],
       stack: [],
       description: "blah, blah, blah, blah, blah, blah, blah",
+      thumbnail: 'https://i.postimg.cc/PrwLZhKg/Chat-App.gif',
     },
     {
       name: "Memorice Pokemon",
@@ -119,6 +126,7 @@ const data = {
       keywords: [],
       stack: [],
       description: "blah, blah, blah, blah, blah, blah, blah",
+      thumbnail: 'https://i.postimg.cc/PrwLZhKg/Chat-App.gif',
     },
   ],  
 }

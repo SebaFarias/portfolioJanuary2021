@@ -53,7 +53,7 @@ const Projects = () => {
           </div>
         </Grid>
       </Grid>
-      <Grid container alignItems='center' justify='center' spacing={2} className={classes.searchBar}>
+      <Grid container alignItems='center' justify='center' spacing={4} className={classes.searchBar}>
           {projects.map( ( project , index ) => {
             return (
               <>

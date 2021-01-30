@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types';
 import data from '../../../data/data'
-import aligareImg from '../../../public/assets/logo-Aligare.png'
-import surtitechImg from '../../../public/assets/logo-Surtigas.png'
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Box,
@@ -83,7 +81,7 @@ const Experience = () => {
   const classes = useStyles();
   const [value, setValue] = useState(0);
   const experienceList = data.experience
-  const companyImg = [ aligareImg, surtitechImg, surtitechImg]
+  const companyImg = [ 'https://i.postimg.cc/Fz6jp89n/logo-Aligare.png', 'https://i.postimg.cc/J7YcRDbc/logo-Surtigas.png', 'https://i.postimg.cc/J7YcRDbc/logo-Surtigas.png']
 
   const handleChange = (event, newValue) => {
     setValue(newValue);

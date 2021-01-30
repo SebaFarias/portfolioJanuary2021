@@ -3,13 +3,21 @@ import { purple } from '@material-ui/core/colors'
 
 const DARK_MODE_KEY = 'dark_mode'
 const LIGHT_THEME = createMuiTheme({
-  
+  palette: {
+    background:{
+      paper: '#F4F4F4',
+    }
+  },
 })
 const DARK_THEME = createMuiTheme({
   palette: {
-    primary:purple,
+    primary: purple,
     type: 'dark',
-  }
+    background:{
+      paper: '#1B1931',
+      default: '#1D1023',
+    }
+  },
 })
 const darkMode = {
   getTheme: () => {
