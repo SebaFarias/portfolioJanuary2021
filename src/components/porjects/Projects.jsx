@@ -2,9 +2,16 @@ import React, { useContext } from 'react'
 import LangContext from '../../LanguageConfig'
 import data from '../../../data/data'
 import ProjectCard from './ProjectCard'
-import { Divider, Grid, InputAdornment, Paper, TextField, Typography, Hidden } from '@material-ui/core'
+import { 
+  Grid,
+  IconButton,
+  InputAdornment,
+  Paper,
+  TextField,
+  Typography,
+} from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import SearchIcon from '@material-ui/icons/Search';
+import { AddCircle, Search } from '@material-ui/icons';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -21,6 +28,13 @@ const useStyles = makeStyles((theme) => ({
     searchBar:{
       margin: '1rem 0',
     },
+    addBtnContainer:{
+      display: 'flex',
+      justifyContent: 'end',
+    },
+    filtersContainer:{
+
+    },
 }));
 
 const Projects = () => {
@@ -35,38 +49,38 @@ const Projects = () => {
         <Grid item xs={12}>
           <Typography variant='h2' color='primary' align='center'>Projects</Typography>
         </Grid>
-        <Grid item xs={12}>
-          <div className={classes.searchBar}>
-            <TextField 
-              label={lang.search} 
-              variant='outlined' 
-              color='secondary' 
-              fullWidth
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position='end'>
-                    <SearchIcon/>
-                  </InputAdornment>
-                ),
-              }}
-              />
-          </div>
+        <Grid container item xs={12} alignItems='center'>
+          <Grid item xs={11}>
+            <div className={classes.searchBar}>
+              <TextField 
+                label={lang.search} 
+                variant='outlined' 
+                color='secondary' 
+                fullWidth
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position='end'>
+                      <Search/>
+                    </InputAdornment>
+                  ),
+                }}
+                />
+            </div>
+          </Grid>
+          <Grid item xs={1} className={classes.addBtnContainer}>
+            <IconButton color='secondary'>
+              <AddCircle/>
+            </IconButton>
+          </Grid>
+        </Grid>
+        <Grid item xs={12} className={classes.filtersContainer}>
+          
         </Grid>
       </Grid>
       <Grid container alignItems='center' justify='center' spacing={4} className={classes.searchBar}>
           {projects.map( ( project , index ) => {
             return (
-              <>
-                {index>0?
-                <Hidden smUp>
-                  <Grid item xs={12}>
-                    <Divider/>
-                  </Grid>
-                </Hidden> : ''}
-              <Grid item xs={12} sm={5} md={4}>
-                <ProjectCard project={project}/>
-              </Grid>
-              </>
+              <ProjectCard project={project} divider={index>0}/>
             )
           })}
       </Grid>

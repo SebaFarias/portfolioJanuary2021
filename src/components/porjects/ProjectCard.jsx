@@ -8,6 +8,9 @@ import {
   CardActions,
   CardContent,
   CardMedia,
+  Divider,
+  Grid,
+  Hidden,
   Link,
   Typography } from '@material-ui/core'
 
@@ -21,36 +24,46 @@ const useStyles = makeStyles( (theme) => ({
   },
 }))
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, divider }) => {
 
   const classes = useStyles()
 
   return(
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.img}
-          image={project.thumbnail}
-          title={`${project.name} preview`}
-          />
-        <CardContent>
-        <Typography gutterBottom variant="h5" component="h2">
-          {project.name}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {project.description}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button component={Link} href={project.repository} target='_blank' size="small" color="primary" startIcon={<GitHub/>}>
-          Code
-        </Button>
-        <Button component={Link} href={project.live} target='_blank' size="small" color="primary" startIcon={<LiveTv/>}>
-          Live
-        </Button>
-      </CardActions>
-    </Card>
+    <>
+      {divider?
+      <Hidden smUp>
+        <Grid item xs={12}>
+          <Divider/>
+        </Grid>
+      </Hidden>:''}
+      <Grid item xs={12} sm={5} md={4}>
+        <Card className={classes.root}>
+          <CardActionArea>
+            <CardMedia
+              className={classes.img}
+              image={project.thumbnail}
+              title={`${project.name} preview`}
+              />
+            <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              {project.name}
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                {project.description}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+            <Button component={Link} href={project.repository} target='_blank' size="small" color="primary" startIcon={<GitHub/>}>
+              Code
+            </Button>
+            <Button component={Link} href={project.live} target='_blank' size="small" color="primary" startIcon={<LiveTv/>}>
+              Live
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
+    </>
   )
 }
 

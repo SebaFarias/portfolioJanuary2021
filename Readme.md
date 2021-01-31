@@ -69,5 +69,10 @@ Casa Azul coin
 - [X] Toggler (Switch)
 - [ ] Settings subMenu
 
-352 X 288
-4,20 x 3,55
+352 X 288 videos para preview en Openshot
+
+### Todo 30/01/21
+- [ ] Agregar sección para filtros
+- [ ] Agregar badges de filtros, con x para quitarlos
+- [ ] Filtros Filtran una vez aplicados
+- [ ] Filtros Filtran en tiempo real
