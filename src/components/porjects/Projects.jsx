@@ -41,8 +41,8 @@ const Projects = () => {
   const lang = useContext(LangContext)
   const classes = useStyles()
   const projects = data.projects
-  const [ newFilter, setNewFilter ] = useStyles( '' )
-  const [ filters, setFilters ] = useStyles( [ ] )
+  const [ newFilter, setNewFilter ] = useState( '' )
+  const [ filters, setFilters ] = useState( [ ] )
 
   return (
     <Paper className={classes.root}>
