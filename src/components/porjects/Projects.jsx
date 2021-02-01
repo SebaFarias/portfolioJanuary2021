@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import LangContext from '../../LanguageConfig'
 import data from '../../../data/data'
 import ProjectCard from './ProjectCard'
@@ -33,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: 'end',
     },
     filtersContainer:{
-
     },
 }));
 
@@ -42,6 +41,8 @@ const Projects = () => {
   const lang = useContext(LangContext)
   const classes = useStyles()
   const projects = data.projects
+  const [ newFilter, setNewFilter ] = useStyles( '' )
+  const [ filters, setFilters ] = useStyles( [ ] )
 
   return (
     <Paper className={classes.root}>
