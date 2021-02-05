@@ -64,15 +64,15 @@ Distrito 10 coin
 Casa Azul coin
 
 ### Todo 13/01/2021
-- [X] Dark Mode File
-- [X] Languages File
-- [X] Toggler (Switch)
-- [ ] Settings subMenu
+    [X] Dark Mode File
+    [X] Languages File
+    [X] Toggler (Switch)
+    [ ] Settings subMenu
 
 352 X 288 videos para preview en Openshot
 
 ### Todo 30/01/21
-- [ ] Agregar sección para filtros
-- [ ] Agregar badges de filtros, con x para quitarlos
-- [ ] Filtros Filtran una vez aplicados
-- [ ] Filtros Filtran en tiempo real
+    [ ] Agregar sección para filtros
+    [ ] Agregar badges de filtros, con x para quitarlos
+    [ ] Filtros Filtran una vez aplicados
+    [ ] Filtros Filtran en tiempo real

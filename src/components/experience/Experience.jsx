@@ -81,7 +81,7 @@ const Experience = () => {
   const classes = useStyles();
   const [value, setValue] = useState(0);
   const experienceList = data.experience
-  const companyImg = [ 'https://i.postimg.cc/Fz6jp89n/logo-Aligare.png', 'https://i.postimg.cc/J7YcRDbc/logo-Surtigas.png', 'https://i.postimg.cc/J7YcRDbc/logo-Surtigas.png']
+  const companyImg = [ 'https://i.postimg.cc/Fz6jp89n/logo-Aligare.png', 'https://i.postimg.cc/J7YcRDbc/logo-Surtigas.png']
 
   const handleChange = (event, newValue) => {
     setValue(newValue);

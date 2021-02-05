@@ -45,19 +45,10 @@ const data = {
           practicantes: "",
           procedures: "",
           repair: "",
-        },
-      },
-      initialDate: "Octubre 2018",
-      endDate: "Agosto 2019",
-    },
-    {
-      company: "SurtiTech",
-      role: "Instalador",
-      content: {
-        description: " Surtitech presta el servicio de Telemetría de más de 3.000 centrales de GLP pertenecientes a Abastible a lo largo de todo Chile. Como instalador, debía tanto habilitar nuevas centrales para su monitoreo como reparar centrales que no estén transimitendo correctamente la información",
-        responsabilities: {
-          installer: "Encargado de visitar centrales sin transmisión para identificar la falla en comunicación con un supporter de AIUT(Proveedor de los equipos) y repararla. ",
-          supporter: "Encargado de visitar centrales sin dispositivos instalados para instalarlos ",
+          instalador: {
+            installer: "Encargado de visitar centrales sin transmisión para identificar la falla en comunicación con un supporter de AIUT(Proveedor de los equipos) y repararla. ",
+            supporter: "Encargado de visitar centrales sin dispositivos instalados para instalarlos ",
+          },
         },
       },
       initialDate: "Octubre 2018",

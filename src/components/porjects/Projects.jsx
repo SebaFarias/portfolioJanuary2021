@@ -44,6 +44,22 @@ const Projects = () => {
   const [ newFilter, setNewFilter ] = useState( '' )
   const [ filters, setFilters ] = useState( [ ] )
 
+  const handleChange = event => {
+    setNewFilter(event.target.value)
+  }
+  const addFilter = ( ) => {
+    console.log('adding')
+    if( newFilter === '' ) return
+    if( filters.indexOf(newFilter) === -1 ){
+      setFilters( prevState => {
+        const newFiltersArray = prevState
+        newFiltersArray[prevState.length] = newFilter
+        return newFiltersArray
+      })
+      setNewFilter('')
+    }
+  }
+
   return (
     <Paper className={classes.root}>
       <Grid container alignContent='center' justify='center' spacing={2}>
@@ -57,6 +73,8 @@ const Projects = () => {
                 label={lang.search} 
                 variant='outlined' 
                 color='secondary' 
+                value={newFilter}
+                onChange={handleChange}
                 fullWidth
                 InputProps={{
                   endAdornment: (
@@ -69,7 +87,7 @@ const Projects = () => {
             </div>
           </Grid>
           <Grid item xs={1} className={classes.addBtnContainer}>
-            <IconButton color='secondary'>
+            <IconButton color='secondary' onclick={addFilter}>
               <AddCircle/>
             </IconButton>
           </Grid>
