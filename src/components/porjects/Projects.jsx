@@ -2,12 +2,15 @@ import React, { useContext, useState } from 'react'
 import LangContext from '../../LanguageConfig'
 import data from '../../../data/data'
 import ProjectCard from './ProjectCard'
-import { 
+import {
+  Chip, 
   Grid,
   IconButton,
   InputAdornment,
+  FormControl,
+  InputLabel,
+  OutlinedInput,
   Paper,
-  TextField,
   Typography,
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
@@ -26,13 +29,25 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: '0px 15px 5px 10px rgba(0,0,0,0.1)',
     },
     searchBar:{
-      margin: '1rem 0',
+      margin: `${theme.spacing(3)}px 0px`,
     },
     addBtnContainer:{
       display: 'flex',
       justifyContent: 'end',
     },
-    filtersContainer:{
+    fullWidth:{
+      width: '100%',
+    },
+    filtersContainer: {
+      display: 'flex',
+      justifyContent: 'center',
+      flexWrap: 'wrap',
+      listStyle: 'none',
+      padding: theme.spacing(0.5),
+      margin: 0,
+    },
+    chip: {
+      margin: theme.spacing(0.5),
     },
 }));
 
@@ -47,8 +62,9 @@ const Projects = () => {
   const handleChange = event => {
     setNewFilter(event.target.value)
   }
-  const addFilter = ( ) => {
+  const addFilter = e => {
     console.log('adding')
+    e.preventDefault()
     if( newFilter === '' ) return
     if( filters.indexOf(newFilter) === -1 ){
       setFilters( prevState => {
@@ -59,6 +75,11 @@ const Projects = () => {
       setNewFilter('')
     }
   }
+  const handleDelete = filterToDelete => {
+    setFilters( prevState => {
+      return prevState.filter( filter => filter !== filterToDelete )
+    })
+  }
 
   return (
     <Paper className={classes.root}>
@@ -66,34 +87,42 @@ const Projects = () => {
         <Grid item xs={12}>
           <Typography variant='h2' color='primary' align='center'>Projects</Typography>
         </Grid>
-        <Grid container item xs={12} alignItems='center'>
-          <Grid item xs={11}>
-            <div className={classes.searchBar}>
-              <TextField 
-                label={lang.search} 
-                variant='outlined' 
-                color='secondary' 
-                value={newFilter}
-                onChange={handleChange}
-                fullWidth
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position='end'>
-                      <Search/>
-                    </InputAdornment>
-                  ),
-                }}
+        <form className={classes.fullWidth} onSubmit={addFilter}>
+          <Grid container xs={12} alignItems='center'>
+            <Grid item xs={10} sm={11}>
+              <FormControl fullWidth className={classes.searchBar} variant="outlined">
+                <InputLabel htmlFor="search-bar">{lang.search}</InputLabel>
+                <OutlinedInput
+                  id="search-bar"
+                  value={newFilter}
+                  onChange={handleChange}
+                  endAdornment={<InputAdornment position="end"><Search/></InputAdornment>}
+                  labelWidth={60}
                 />
-            </div>
+              </FormControl>
+            </Grid>
+            <Grid item xs={2} sm={1} className={classes.addBtnContainer}>
+              <IconButton color='secondary' type='submit'>
+                <AddCircle/>
+              </IconButton>
+            </Grid>
           </Grid>
-          <Grid item xs={1} className={classes.addBtnContainer}>
-            <IconButton color='secondary' onclick={addFilter}>
-              <AddCircle/>
-            </IconButton>
-          </Grid>
-        </Grid>
-        <Grid item xs={12} className={classes.filtersContainer}>
-          
+        </form>
+        <Grid item xs={12}>
+          <Paper component='ul' className={classes.filtersContainer}>
+            {filters.map( filter => {
+              return(
+                <li key={`${filter}-chip`}>
+                  <Chip
+                    label={filter}
+                    onDelete={()=>{handleDelete(filter)}}
+                    className={classes.chip}
+                    variant="outlined"
+                  />
+                </li>
+              )
+            })}
+          </Paper>
         </Grid>
       </Grid>
       <Grid container alignItems='center' justify='center' spacing={4} className={classes.searchBar}>
