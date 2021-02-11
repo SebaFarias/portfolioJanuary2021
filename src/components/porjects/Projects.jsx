@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import LangContext from '../../LanguageConfig'
 import data from '../../../data/data'
 import ProjectCard from './ProjectCard'
@@ -45,6 +45,7 @@ const useStyles = makeStyles((theme) => ({
       listStyle: 'none',
       padding: theme.spacing(0.5),
       margin: 0,
+      background: theme.palette.background.default,
     },
     chip: {
       margin: theme.spacing(0.5),
@@ -59,17 +60,20 @@ const Projects = () => {
   const [ newFilter, setNewFilter ] = useState( '' )
   const [ filters, setFilters ] = useState( [ ] )
 
-  const handleChange = event => {
-    setNewFilter(event.target.value)
+  useEffect( () => {
+
+  },[newFilter])
+
+  const handleSearchbarChange = ({ target: {value} }) => {
+    setNewFilter(value)
   }
   const addFilter = e => {
-    console.log('adding')
     e.preventDefault()
     if( newFilter === '' ) return
-    if( filters.indexOf(newFilter) === -1 ){
+    if( filters.indexOf(newFilter.toLowerCase().trim()) === -1 ){
       setFilters( prevState => {
         const newFiltersArray = prevState
-        newFiltersArray[prevState.length] = newFilter
+        newFiltersArray[prevState.length] = newFilter.toLowerCase().trim()
         return newFiltersArray
       })
       setNewFilter('')
@@ -80,7 +84,21 @@ const Projects = () => {
       return prevState.filter( filter => filter !== filterToDelete )
     })
   }
-
+  const applyFilters = ( project ) => {
+    const keywords = project.keywords
+    const searchBar = newFilter.toLowerCase().trim()
+    const filterArray = filters
+    if( '' === searchBar && filterArray.length < 1 ) return true
+    if('' !== searchBar && keywords.every( keyword => {
+      keyword.toLowerCase().trim().indexOf(searchBar.toLowerCase().trim()) === -1
+    })) return false
+    if( filterArray.length > 0 && keywords.every( keyword => {
+      return filterArray.every( filter => {
+        return keyword.toLowerCase().trim().indexOf(filter.toLowerCase().trim()) === -1
+      })
+    })) return false
+    return true
+  }
   return (
     <Paper className={classes.root}>
       <Grid container alignContent='center' justify='center' spacing={2}>
@@ -95,7 +113,7 @@ const Projects = () => {
                 <OutlinedInput
                   id="search-bar"
                   value={newFilter}
-                  onChange={handleChange}
+                  onChange={handleSearchbarChange}
                   endAdornment={<InputAdornment position="end"><Search/></InputAdornment>}
                   labelWidth={60}
                 />
@@ -108,28 +126,34 @@ const Projects = () => {
             </Grid>
           </Grid>
         </form>
-        <Grid item xs={12}>
-          <Paper component='ul' className={classes.filtersContainer}>
-            {filters.map( filter => {
-              return(
-                <li key={`${filter}-chip`}>
-                  <Chip
-                    label={filter}
-                    onDelete={()=>{handleDelete(filter)}}
-                    className={classes.chip}
-                    variant="outlined"
-                  />
-                </li>
-              )
-            })}
-          </Paper>
-        </Grid>
+        {filters.length < 1? '':
+        <>
+          <Typography variant='body1' color='primary' align='center'>{`Filtros:`}</Typography>
+          <Grid item xs={12}>
+            <Paper component='ul' className={classes.filtersContainer} elevation10>
+                {filters.map( filter => {
+                  return(
+                    <li key={`${filter}-chip`}>
+                      <Chip
+                        label={filter}
+                        onDelete={()=>{handleDelete(filter)}}
+                        className={classes.chip}
+                        variant="outlined"
+                        />
+                    </li>
+                  )
+                })}
+            </Paper>
+          </Grid>
+        </>}        
       </Grid>
       <Grid container alignItems='center' justify='center' spacing={4} className={classes.searchBar}>
           {projects.map( ( project , index ) => {
-            return (
-              <ProjectCard project={project} divider={index>0}/>
-            )
+            if(applyFilters( project )){
+              return (
+                <ProjectCard project={project} divider={index>0}/>
+              )
+            }
           })}
       </Grid>
     </Paper>
