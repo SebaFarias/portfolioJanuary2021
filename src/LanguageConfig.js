@@ -12,7 +12,7 @@ const ENGLISH = {
   search: "Search",
 }
 const SPANISH = {
-  heroTitle:"Desarrolador web Full-Stack",
+  heroTitle:"Desarrollador web Full-Stack",
   heroSubtitle: "Buscando trabajo de Front-End",
   heroAlt: "Tipo con estilo sentado encima de su escritorio",
   heroCTA: "Contratar",
