@@ -2,14 +2,18 @@ import React from 'react'
 
 const LANGUAGE_KEY = 'english'
 const ENGLISH = {
-  hero: "This Portfolio will get me a job",
+  heroTitle: "Full-Stack Web Developer",
+  heroSubtitle: "Looking for a Fron-End job",
+  heroCTA: 'Hire',
   settings: "Settings",
   language: "Language",
   darkMode: "Dark Mode",
   search: "Search",
 }
 const SPANISH = {
-  hero:"Este Portafolio me va a dar una peguita",
+  heroTitle:"Desarrolador web Full-Stack",
+  heroSubtitle: "Buscando trabajo de Front-End",
+  heroCTA: 'Contratar',
   settings: "Configuración",
   language: "Lenguaje",
   darkMode: "Modo Oscuro",

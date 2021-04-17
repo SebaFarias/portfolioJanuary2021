@@ -3,13 +3,9 @@ import React, {useState, useCallback} from 'react'
 import {ThemeProvider} from '@material-ui/styles'
 import { DARK_THEME, LIGHT_THEME, darkMode } from './themeConfig'
 import LangContext , { ENGLISH, SPANISH, language } from './LanguageConfig'
-import { Paper, Grid } from '@material-ui/core'
+import { Paper } from '@material-ui/core'
 import NavBar from './components/navBar/NavBar'
-import SettingsMenu from './components/navBar/SettingsMenu'
-import Hero from './components/hero/Hero'
-import Skills from './components/skills/Skills'
-import Experience from './components/experience/Experience'
-import Projects from './components/porjects/Projects'
+import TheLayout from './containers/TheLayout'
 import Footer from './components/footer/Footer'
 
 const App = () => {
@@ -38,17 +34,8 @@ const App = () => {
             themeToggler={[ darkTheme, toggleDarkMode ]}
             langToggler ={[ english, toggleEnglish]}  
           />
-          <Grid container>
-            <Grid item xs={0} sm={1} md={2}/>
-            <Grid item xs={12} sm={10} md={8}>
-              <Hero/>
-              <Skills/>
-              <Experience/>
-              <Projects/>
-              <Footer/>
-            </Grid>
-            <Grid item xs={0} sm={1} md={2}/>
-          </Grid>
+          <TheLayout/>
+          <Footer/>
         </Paper>
       </LangContext.Provider>
     </ThemeProvider>

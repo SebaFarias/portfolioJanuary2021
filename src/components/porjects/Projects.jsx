@@ -60,9 +60,7 @@ const Projects = () => {
   const [ newFilter, setNewFilter ] = useState( '' )
   const [ filters, setFilters ] = useState( [ ] )
 
-  useEffect( () => {
-
-  },[newFilter])
+  useEffect( () => {},[newFilter])
 
   const handleSearchbarChange = ({ target: {value} }) => {
     setNewFilter(value)
