@@ -2,7 +2,7 @@ import React from 'react'
 
 const LANGUAGE_KEY = 'english'
 const ENGLISH = {
-  heroTitle: "Full-Stack Web Developer",
+  heroTitle: "Full-Stack Developer",
   heroSubtitle: "Looking for a Fron-End job",
   heroAlt: "cool guy sitting on top of his desk",
   heroCTA: "Hire",
@@ -12,7 +12,7 @@ const ENGLISH = {
   search: "Search",
 }
 const SPANISH = {
-  heroTitle:"Desarrollador web Full-Stack",
+  heroTitle:"Desarrollador Full-Stack",
   heroSubtitle: "Buscando trabajo de Front-End",
   heroAlt: "Tipo con estilo sentado encima de su escritorio",
   heroCTA: "Contratar",

@@ -23,28 +23,28 @@ const useStyles = makeStyles( ( theme ) => ({
   title:{
     fontSize: '2.5rem',
     fontWeight: 900,
-    marginBottom: theme.spacing(2),
     textAlign: 'left',
+    marginBottom: theme.spacing(2),
   },
   mobileTitle:{
     fontSize: '2.5rem',
     fontWeight: 900,
-    marginBottom: theme.spacing(2),
+    margin: `0 ${theme.spacing(4)}px ${theme.spacing(2)}px`,
   },
   subtitle:{
     fontSize: '1.75Rem',
+    textAlign: 'left',
   },
   mobileSubtitle:{
     fontSize: '1.75Rem',
-    textAlign:'center',
-    margin: '0 3Rem',
+    margin: `0px ${theme.spacing(4)}px`,
   },
   button:{
-    marginTop: 10,
+    marginTop: theme.spacing(2),
     maxWidth: 120,
   },
   mobileButton:{
-    margin: `${theme.spacing(2)}px ${theme.spacing(2)}px 0px`,
+    margin: `${theme.spacing(2)}px ${theme.spacing(4)}px 0px`,
   },
 }))
 
@@ -63,28 +63,29 @@ const Hero = () => {
         </Grid>
       </Hidden>
       <Grid item container sm={12} md={6} direction='column' justify='flex-end'>
-      <Typography 
-        className={ desktop? classes.title : classes.mobileTitle }
-        variant='h1'
-        color='primary'
-        align='center'
-      >
-        {lang.heroTitle}
-      </Typography>
-      <Typography 
-        variant='h2'
-        className={ desktop? classes.subtitle : classes.mobileSubtitle}
-      >
-        {lang.heroSubtitle}
-      </Typography>
-      <Button 
-        variant="contained"
-        color="secondary"
-        fullWidth={false}
-        className={desktop? classes.button : classes.mobileButton}
-      >
-        {lang.heroCTA}
-      </Button>
+        <Typography 
+          className={ desktop? classes.title : classes.mobileTitle }
+          variant='h1'
+          color='primary'
+          align='center'
+          >
+          {lang.heroTitle}
+        </Typography>
+        <Typography 
+          variant='h2'
+          align='center'
+          className={ desktop? classes.subtitle : classes.mobileSubtitle }
+          >
+          {lang.heroSubtitle}
+        </Typography>
+        <Button 
+          variant="contained"
+          color="secondary"
+          fullWidth={false}
+          className={desktop? classes.button : classes.mobileButton}
+        >
+          {lang.heroCTA}
+        </Button>
       </Grid>
       <Hidden smDown alignItems='flex-end'>
         <Grid item container md={6}> 
