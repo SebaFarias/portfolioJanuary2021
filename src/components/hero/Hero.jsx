@@ -11,22 +11,25 @@ import { makeStyles } from '@material-ui/core/styles'
 import HeroImg from './HeroImg'
 import img from '../../img/office.png'
 
-const useStyles = makeStyles( (theme) => ({
+const useStyles = makeStyles( ( theme ) => ({
   root:{
     margin: '4rem 3px',
     paddingBottom: '5rem',
   },
-
+  mobileRoot:{
+    margin: '2rem 3px',
+    paddingBottom: '5rem',  
+  },
   title:{
     fontSize: '2.5rem',
     fontWeight: 900,
-    marginBottom: 20,
+    marginBottom: theme.spacing(2),
     textAlign: 'left',
   },
   mobileTitle:{
     fontSize: '2.5rem',
     fontWeight: 900,
-    marginBottom: 20,
+    marginBottom: theme.spacing(2),
   },
   subtitle:{
     fontSize: '1.75Rem',
@@ -34,13 +37,14 @@ const useStyles = makeStyles( (theme) => ({
   mobileSubtitle:{
     fontSize: '1.75Rem',
     textAlign:'center',
+    margin: '0 3Rem',
   },
   button:{
     marginTop: 10,
     maxWidth: 120,
   },
   mobileButton:{
-    margin: '10px 10px 0px 10px',
+    margin: `${theme.spacing(2)}px ${theme.spacing(2)}px 0px`,
   },
 }))
 
@@ -59,13 +63,26 @@ const Hero = () => {
         </Grid>
       </Hidden>
       <Grid item container sm={12} md={6} direction='column' justify='flex-end'>
-      <Typography variant='h1' color='primary' className={ desktop? classes.title : classes.mobileTitle }>
+      <Typography 
+        className={ desktop? classes.title : classes.mobileTitle }
+        variant='h1'
+        color='primary'
+        align='center'
+      >
         {lang.heroTitle}
       </Typography>
-      <Typography variant='h2'className={ desktop? classes.subtitle : classes.mobileSubtitle}>
+      <Typography 
+        variant='h2'
+        className={ desktop? classes.subtitle : classes.mobileSubtitle}
+      >
         {lang.heroSubtitle}
       </Typography>
-      <Button variant="contained" color="secondary" fullWidth={false} className={desktop? classes.button : classes.mobileButton}>
+      <Button 
+        variant="contained"
+        color="secondary"
+        fullWidth={false}
+        className={desktop? classes.button : classes.mobileButton}
+      >
         {lang.heroCTA}
       </Button>
       </Grid>
