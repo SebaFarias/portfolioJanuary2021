@@ -5,18 +5,14 @@ import {
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
-import Hero from '../components/hero/Hero'
-import Skills from '../components/skills/Skills'
-import Experience from '../components/experience/Experience'
-import Projects from '../components/porjects/Projects'
-
 const useStyles = makeStyles( (theme) => ({
   root:{
     borderRadius: 0,
+    transition: `background ${theme.transitions.duration.complex}ms ease-in, color ${theme.transitions.duration.complex}ms ease-in-out`
   }
 }))
 
-const TheLayout = () => {
+const TheLayout = ({ children }) => {
 
   const classes = useStyles()
   return(
@@ -24,10 +20,7 @@ const TheLayout = () => {
       <Grid container>
         <Grid item xs={0} md={1}/>
         <Grid item xs={12} md={10}>
-          <Hero/>
-          <Skills/>
-          <Experience/>
-          <Projects/>
+          { children }
         </Grid>
         <Grid item xs={0} md={1}/>
       </Grid>

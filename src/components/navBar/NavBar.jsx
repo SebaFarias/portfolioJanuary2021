@@ -19,13 +19,11 @@ const navBar = ({themeToggler,langToggler}) =>{
   const [ showSettingsMenu, setShowSettingsMenu ] = useState(false);
 
   return(
-    <AppBar position='sticky'>
+    <AppBar position='sticky' id='nav-bar'>
       <Toolbar>
-        <Hidden smUp>
           <IconButton color='inherit' className={classes.menuButton}>
             <Menu/>  {/*Hamburguer Menu Icon*/}
           </IconButton>
-        </Hidden>
         <Typography variant='h6' className={classes.title}>
           Seba Farias
         </Typography>
@@ -36,7 +34,6 @@ const navBar = ({themeToggler,langToggler}) =>{
             >
             CV
           </Button>
-        <Hidden xsDown>   
           <IconButton 
             color='inherit' 
             onClick={() => {setShowSettingsMenu( prevState => {
@@ -44,8 +41,12 @@ const navBar = ({themeToggler,langToggler}) =>{
           >
             <Settings/>
           </IconButton>
-        </Hidden>
-        {showSettingsMenu && <SettingsMenu themeToggler={themeToggler}langToggler={langToggler}/>}
+          <SettingsMenu 
+            open={showSettingsMenu}
+            onClose={()=>{setShowSettingsMenu(false)}}
+            themeToggler={themeToggler}
+            langToggler={langToggler}
+          />
       </Toolbar>
     </AppBar>
   )

@@ -6,6 +6,10 @@ import LangContext , { ENGLISH, SPANISH, language } from './LanguageConfig'
 import NavBar from './components/navBar/NavBar'
 import TheLayout from './containers/TheLayout'
 import Footer from './components/footer/Footer'
+import Experience from './components/experience/Experience'
+import Projects from './components/porjects/Projects'
+import Hero from './components/hero/Hero'
+import Skills from './components/skills/Skills'
 
 const App = () => {
   const [darkTheme , setDarkTheme] = useState(darkMode.getTheme())
@@ -15,7 +19,7 @@ const App = () => {
         darkMode.setTheme(newState);
         return newState;
     });
-},[darkTheme]);
+  },[darkTheme]);
   const [english , setEnglish] = useState(language.getLang())
   const toggleEnglish = useCallback(() => {
     setEnglish( prevState => {
@@ -33,7 +37,12 @@ const App = () => {
               themeToggler={[ darkTheme, toggleDarkMode ]}
               langToggler ={[ english, toggleEnglish]}  
             />
-            <TheLayout/>
+            <TheLayout>
+              <Hero/>
+              <Skills/>
+              <Experience/>
+              <Projects/>
+            </TheLayout>
             <Footer/>
         </LangContext.Provider>
       </ThemeProvider>
