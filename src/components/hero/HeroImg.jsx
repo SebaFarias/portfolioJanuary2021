@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme)=>({
   img:{
     width: '100%',
     height: 'auto',
+    margin: theme.spacing(2),
   },
 }));
   

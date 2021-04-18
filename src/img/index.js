@@ -1,5 +1,7 @@
-import office from './office.png'
+import undrawOffice from './undrawOffice.svg'
 
-export default {
-  office: office,
+const images = {
+  office: undrawOffice,
 }
+
+export default images
