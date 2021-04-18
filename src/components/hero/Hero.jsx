@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import HeroImg from './HeroImg'
-import img from '../../img/office.png'
+import images from '../../img/index.js'
 
 const useStyles = makeStyles( ( theme ) => ({
   root:{
@@ -17,7 +17,7 @@ const useStyles = makeStyles( ( theme ) => ({
     paddingBottom: '5rem',
   },
   mobileRoot:{
-    margin: '2rem 3px',
+    margin: '1.5rem 3px',
     paddingBottom: '5rem',  
   },
   title:{
@@ -52,11 +52,11 @@ const Hero = () => {
   const desktop = useMediaQuery('(min-width:960px)');
   const lang = useContext(LangContext)
   const classes = useStyles()
-  const imgURL = img
+  const imgURL = images.office
   const alt= lang.heroAlt
 
   return(
-    <Grid container className={classes.root}>
+    <Grid container className={desktop? classes.root : classes.mobileRoot}>
       <Hidden mdUp>
         <Grid item container sm={12}>
           <HeroImg url={imgURL} alt={alt}/>
