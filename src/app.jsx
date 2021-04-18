@@ -1,6 +1,6 @@
 import './main.css'
 import React, {useState, useCallback} from 'react'
-import {ThemeProvider} from '@material-ui/styles'
+import { ThemeProvider as MuiThemeProvider, ThemeProvider }  from '@material-ui/styles'
 import { DARK_THEME, LIGHT_THEME, darkMode } from './themeConfig'
 import LangContext , { ENGLISH, SPANISH, language } from './LanguageConfig'
 import NavBar from './components/navBar/NavBar'
@@ -26,16 +26,18 @@ const App = () => {
 },[english]);
 
   return (
-    <ThemeProvider theme={ darkTheme ? DARK_THEME : LIGHT_THEME }>
-      <LangContext.Provider value={ english? ENGLISH : SPANISH }>
-          <NavBar 
-            themeToggler={[ darkTheme, toggleDarkMode ]}
-            langToggler ={[ english, toggleEnglish]}  
-          />
-          <TheLayout/>
-          <Footer/>
-      </LangContext.Provider>
-    </ThemeProvider>
+    <MuiThemeProvider theme={ darkTheme ? DARK_THEME : LIGHT_THEME }>
+      <ThemeProvider theme={ darkTheme ? DARK_THEME : LIGHT_THEME }>
+        <LangContext.Provider value={ english? ENGLISH : SPANISH }>
+            <NavBar 
+              themeToggler={[ darkTheme, toggleDarkMode ]}
+              langToggler ={[ english, toggleEnglish]}  
+            />
+            <TheLayout/>
+            <Footer/>
+        </LangContext.Provider>
+      </ThemeProvider>
+    </MuiThemeProvider>
   )
 }
 
