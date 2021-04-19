@@ -12,7 +12,7 @@ import images from '../../img/index.js'
 
 const useStyles = makeStyles( ( theme ) => ({
   root:{
-    margin: '1.5rem 3px',
+    margin: '0.75rem 3px',
     paddingBottom: '5rem',
     [theme.breakpoints.up('md')]: {
       margin: '4rem 3px',
@@ -21,22 +21,22 @@ const useStyles = makeStyles( ( theme ) => ({
   title:{
     fontSize: '2.5rem',
     fontWeight: 900,
-    margin: `0px ${theme.spacing(4)}px ${theme.spacing(2)}px`,
-    [theme.breakpoints.up('md')]: {
-      textAlign: 'left',
-      margin: `0px 0px ${theme.spacing(2)}px`,
-    }
-  },
-  subtitle:{
-    fontSize: '1.75Rem',
-    margin: `0px ${theme.spacing(4)}px`,
+    margin: `0px ${theme.spacing(6)}px`,
     [theme.breakpoints.up('md')]: {
       textAlign: 'left',
       margin: 0,
     }
   },
+  subtitle:{
+    fontSize: '1.75Rem',
+    margin: `${theme.spacing(2)}px ${theme.spacing(6)}px`,
+    [theme.breakpoints.up('md')]: {
+      textAlign: 'left',
+      margin: `${theme.spacing(2)}px 0px`,
+    }
+  },
   button:{
-    margin: `${theme.spacing(2)}px ${theme.spacing(4)}px 0px`,
+    margin: `0px ${theme.spacing(6)}px`,
     [theme.breakpoints.up('md')]: {
       maxWidth: 120,
       marginLeft: 0,
