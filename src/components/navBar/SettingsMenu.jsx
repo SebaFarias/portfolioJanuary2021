@@ -27,13 +27,13 @@ const SettingsMenu = ({ open, onClose, themeToggler, langToggler }) => {
       TransitionComponent={Collapse}
       anchorOrigin= {{ vertical: 'top', horizontal: 'right',}}
     >
-        <MenuList subheader={<ListSubheader>{lang.settings}</ListSubheader>}>
+        <MenuList subheader={<ListSubheader>{lang.navBar.settings}</ListSubheader>}>
           <Divider/>
           <MenuItem>
             <ListItemIcon>
               <Translate />
             </ListItemIcon>
-            <ListItemText id="switch-list-label-language" primary={lang.language} />
+            <ListItemText id="switch-list-label-language" primary={lang.navBar.language} />
             <ListItemSecondaryAction>
               <Toggler
                 toggledPropetie={langToggler}
@@ -45,7 +45,7 @@ const SettingsMenu = ({ open, onClose, themeToggler, langToggler }) => {
             <ListItemIcon>
               <Brightness4 />
             </ListItemIcon>
-            <ListItemText id="switch-list-label-theme" primary={lang.darkMode} />
+            <ListItemText id="switch-list-label-theme" primary={lang.navBar.darkMode} />
             <ListItemSecondaryAction>
               <Toggler
                 toggledPropetie={themeToggler}

@@ -88,38 +88,40 @@ const Experience = () => {
   }
   
   return (
-    <Paper className={classes.root}>
-      <Grid container alignContent='center' justify='center' spacing={1}>
-        <Grid item xs={12}>
-          <Typography variant='h2' color='primary' align='center'>Experience</Typography>
-        </Grid>
-        <Grid item xs={2}>
-          <div className={classes.leftPanel}>
-            <div className={classes.imgContainer}>
-              <img className={classes.img} src={companyImg[value]}></img>
+    <section id='experience'>
+      <Paper className={classes.root}>
+        <Grid container alignContent='center' justify='center' spacing={1}>
+          <Grid item xs={12}>
+            <Typography variant='h2' color='primary' align='center'>Experience</Typography>
+          </Grid>
+          <Grid item xs={2}>
+            <div className={classes.leftPanel}>
+              <div className={classes.imgContainer}>
+                <img className={classes.img} src={companyImg[value]}></img>
+              </div>
+              <Tabs
+                selectionFollowsFocus
+                orientation="vertical"
+                variant="scrollable"
+                value={value}
+                onChange={handleChange}
+                aria-label="Experience tabs"
+                className={classes.tabs}
+                >
+                {experienceList.map( ( experience, index ) =>{
+                  return <Tab label={experience.company} {...a11yProps(index)} />
+                })}
+              </Tabs>
             </div>
-            <Tabs
-              selectionFollowsFocus
-              orientation="vertical"
-              variant="scrollable"
-              value={value}
-              onChange={handleChange}
-              aria-label="Experience tabs"
-              className={classes.tabs}
-              >
-              {experienceList.map( ( experience, index ) =>{
-                return <Tab label={experience.company} {...a11yProps(index)} />
-              })}
-            </Tabs>
-          </div>
+          </Grid>
+          <Grid xs={10}>
+            {experienceList.map( ( experience, index ) => {
+              return <TabPanel value={value} index={index} experience={experience}/>
+            })}
+          </Grid>
         </Grid>
-        <Grid xs={10}>
-          {experienceList.map( ( experience, index ) => {
-            return <TabPanel value={value} index={index} experience={experience}/>
-          })}
-        </Grid>
-      </Grid>
-    </Paper>
+      </Paper>
+    </section>
   )
 }
 

@@ -2,24 +2,36 @@ import React from 'react'
 
 const LANGUAGE_KEY = 'english'
 const ENGLISH = {
-  heroTitle: "Full-Stack Developer",
-  heroSubtitle: "Looking for a Fron-End job",
-  heroAlt: "cool guy sitting on top of his desk",
-  heroCTA: "Hire",
-  settings: "Settings",
-  language: "Language",
-  darkMode: "Dark Mode",
-  search: "Search",
+  hero:{
+    title: "Full-Stack Developer",
+    subtitle: "Looking for a Front-End job",
+    alt: "cool guy sitting on top of his desk",
+    CTA: "Hire",
+  },
+  navBar:{
+    settings: "Settings",
+    language: "Language",
+    darkMode: "Dark Mode",
+  },
+  projects:{
+    search: "Search",
+  },
 }
 const SPANISH = {
-  heroTitle:"Desarrollador Full-Stack",
-  heroSubtitle: "Buscando trabajo de Front-End",
-  heroAlt: "Tipo con estilo sentado encima de su escritorio",
-  heroCTA: "Contratar",
-  settings: "Configuración",
-  language: "Lenguaje",
-  darkMode: "Modo Oscuro",
-  search: "Búsqueda",
+  hero:{
+    title:"Desarrollador Full-Stack",
+    subtitle: "Buscando trabajo de Front-End",
+    alt: "Tipo con estilo sentado encima de su escritorio",
+    CTA: "Contratar",
+  },
+  navBar:{
+    settings: "Configuración",
+    language: "Lenguaje",
+    darkMode: "Modo Oscuro",
+  },
+  projects:{
+    search: "Búsqueda",
+  },
 }
 const language = {
   getLang: () => {

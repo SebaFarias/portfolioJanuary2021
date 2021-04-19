@@ -107,7 +107,7 @@ const Projects = () => {
           <Grid container xs={12} alignItems='center'>
             <Grid item xs={10} sm={11}>
               <FormControl fullWidth className={classes.searchBar} variant="outlined">
-                <InputLabel htmlFor="search-bar">{lang.search}</InputLabel>
+                <InputLabel htmlFor="search-bar">{lang.projects.search}</InputLabel>
                 <OutlinedInput
                   id="search-bar"
                   value={newFilter}

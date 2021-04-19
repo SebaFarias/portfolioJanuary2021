@@ -49,47 +49,47 @@ const Hero = () => {
   const lang = useContext(LangContext)
   const classes = useStyles()
   const imgURL = images.office
-  const alt= lang.heroAlt
+  const alt= lang.hero.alt
 
   return(
     <section id='hero'>
-    <Grid container className={classes.root}>
-      <Hidden mdUp>
-        <Grid item container sm={12}>
-          <HeroImg url={imgURL} alt={alt}/>
+      <Grid container className={classes.root}>
+        <Hidden mdUp>
+          <Grid item container sm={12}>
+            <HeroImg url={imgURL} alt={alt}/>
+          </Grid>
+        </Hidden>
+        <Grid item container sm={12} md={6} direction='column' justify='flex-end'>
+          <Typography 
+            className={ classes.title }
+            variant='h1'
+            color='primary'
+            align='center'
+            >
+            {lang.hero.title}
+          </Typography>
+          <Typography 
+            variant='h2'
+            align='center'
+            className={ classes.subtitle }
+            >
+            {lang.hero.subtitle}
+          </Typography>
+          <Button 
+            variant="contained"
+            color="secondary"
+            fullWidth={false}
+            className={ classes.button }
+          >
+            {lang.hero.CTA}
+          </Button>
         </Grid>
-      </Hidden>
-      <Grid item container sm={12} md={6} direction='column' justify='flex-end'>
-        <Typography 
-          className={ classes.title }
-          variant='h1'
-          color='primary'
-          align='center'
-          >
-          {lang.heroTitle}
-        </Typography>
-        <Typography 
-          variant='h2'
-          align='center'
-          className={ classes.subtitle }
-          >
-          {lang.heroSubtitle}
-        </Typography>
-        <Button 
-          variant="contained"
-          color="secondary"
-          fullWidth={false}
-          className={ classes.button }
-        >
-          {lang.heroCTA}
-        </Button>
+        <Hidden smDown alignItems='flex-end'>
+          <Grid item container md={6}> 
+            <HeroImg url={imgURL} alt={alt}/>
+          </Grid>
+        </Hidden>
       </Grid>
-      <Hidden smDown alignItems='flex-end'>
-        <Grid item container md={6}> 
-          <HeroImg url={imgURL} alt={alt}/>
-        </Grid>
-      </Hidden>
-    </Grid>
     </section>
   )
 }
