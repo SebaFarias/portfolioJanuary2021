@@ -36,11 +36,10 @@ const SPANISH = {
 const language = {
   getLang: () => {
     try{
-      const localStorage = window.localStorage.getItem(LANGUAGE_KEY)
-      if( typeof localStorage !== 'undefined' && localStorage !== null) return localStorage === true;
+      const storedLang = window.localStorage.getItem(LANGUAGE_KEY)
+      if( typeof storedLang !== 'undefined' && storedLang !== null) return storedLang === true;
       if (navigator.languages && navigator.languages.length) return !/es/g.test(navigator.languages[0]);
-      const lang = navigator.userLanguage || navigator.language || navigator.browserLanguage || 'en';
-      return !/es/g.test(lang)
+      return !/es/g.test(navigator.userLanguage || navigator.language || navigator.browserLanguage || 'en')
     }
     catch(e){
       return true
@@ -51,7 +50,7 @@ const language = {
       window.localStorage.setItem(LANGUAGE_KEY,JSON.stringify( value === true ))
     }
     catch(e){
-
+      
     }
   },
 }
