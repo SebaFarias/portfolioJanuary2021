@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { createContext } from 'react'
 
 const LANGUAGE_KEY = 'english'
 const ENGLISH = {
+  contact: {
+    name: 'Name',
+    mail: 'Email',
+    message: 'Message',
+    subject: 'Subject',
+    send: 'Send Message',
+  },
   hero:{
     title: "Full-Stack Developer",
     subtitle: "Looking for a Front-End job",
@@ -18,6 +25,13 @@ const ENGLISH = {
   },
 }
 const SPANISH = {
+  contact: {
+    name: 'Nombre',
+    mail: 'Email',
+    message: 'Mensaje',
+    subject: 'Asunto',
+    send: 'Enviar Mensaje',
+  },
   hero:{
     title:"Desarrollador Full-Stack",
     subtitle: "Buscando trabajo de Front-End",
@@ -56,4 +70,4 @@ const language = {
 }
 
 export { ENGLISH, SPANISH, language }
-export default React.createContext();
+export default createContext();

@@ -1,5 +1,6 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import LangContext from '../../LanguageConfig'
+import ModalContext from '../../Context/Modal'
 import { 
   Button,
   Grid,
@@ -9,6 +10,7 @@ import {
 import { makeStyles } from '@material-ui/core/styles'
 import HeroImg from './HeroImg'
 import images from '../../img/index.js'
+import ContactForm from '../contactForm/ContactForm'
 
 const useStyles = makeStyles( ( theme ) => ({
   root:{
@@ -46,6 +48,7 @@ const useStyles = makeStyles( ( theme ) => ({
 
 const Hero = () => {
 
+  const modalController = useContext(ModalContext)[1]
   const lang = useContext(LangContext)
   const classes = useStyles()
   const imgURL = images.office
@@ -80,6 +83,7 @@ const Hero = () => {
             color="secondary"
             fullWidth={false}
             className={ classes.button }
+            onClick={()=>modalController.openModal(<ContactForm/>)}
           >
             {lang.hero.CTA}
           </Button>
