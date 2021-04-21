@@ -8,10 +8,9 @@ import TheModal from './containers/TheModal'
 import NavBar from './components/navBar/NavBar'
 import TheLayout from './containers/TheLayout'
 import Footer from './components/footer/Footer'
-import Experience from './components/experience/Experience'
-import Projects from './components/porjects/Projects'
+// import Projects from './components/porjects/Projects'
 import Hero from './components/hero/Hero'
-import Skills from './components/skills/Skills'
+import Attribution from './components/attribution/Attribution'
 
 const App = () => {
 
@@ -43,9 +42,7 @@ const App = () => {
               />
             <TheLayout>
               <Hero/>
-              <Skills/>
-              <Experience/>
-              <Projects/>
+              <Attribution/>
             </TheLayout>
             <Footer/>
             <TheModal/>

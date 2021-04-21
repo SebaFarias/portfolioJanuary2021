@@ -14,6 +14,9 @@ import ContactForm from '../contactForm/ContactForm'
 
 const useStyles = makeStyles( ( theme ) => ({
   root:{
+    display: 'flex',
+    flexWrap: 'wrap',
+    boxSizing: 'border-box',
     margin: '0.75rem 3px',
     paddingBottom: '5rem',
     [theme.breakpoints.up('md')]: {
@@ -56,7 +59,7 @@ const Hero = () => {
 
   return(
     <section id='hero'>
-      <Grid container className={classes.root}>
+      <Grid className={classes.root}>
         <Hidden mdUp>
           <Grid item container sm={12}>
             <HeroImg url={imgURL} alt={alt}/>
@@ -81,6 +84,7 @@ const Hero = () => {
           <Button 
             variant="contained"
             color="secondary"
+            aria-label={lang.hero.CTA}
             fullWidth={false}
             className={ classes.button }
             onClick={()=>modalController.openModal(<ContactForm/>)}

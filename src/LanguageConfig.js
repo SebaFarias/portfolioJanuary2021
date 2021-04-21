@@ -2,6 +2,9 @@ import React, { createContext } from 'react'
 
 const LANGUAGE_KEY = 'english'
 const ENGLISH = {
+  attribution:{
+    made: 'Made with ',
+  },
   contact: {
     name: 'Name',
     mail: 'Email',
@@ -25,6 +28,9 @@ const ENGLISH = {
   },
 }
 const SPANISH = {
+  attribution:{
+    made: 'Hecho con ',
+  },
   contact: {
     name: 'Nombre',
     mail: 'Email',

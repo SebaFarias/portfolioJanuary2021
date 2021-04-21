@@ -10,8 +10,8 @@ const useStyles = makeStyles((theme) =>({
   container:{
     display: 'flex',
     position: 'absolute',
-    top: '10vh',
-    bottom: '10vh',
+    top: '5vh',
+    bottom: '5vh',
     left: '10vw',
     right: '10vw',
     padding: `${theme.spacing(4)}px ${theme.spacing(2)}px`,
