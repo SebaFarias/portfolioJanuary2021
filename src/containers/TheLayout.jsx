@@ -9,15 +9,21 @@ const useStyles = makeStyles( (theme) => ({
   root:{
     borderRadius: 0,
     transition: `background ${theme.transitions.duration.complex}ms ease-in, color ${theme.transitions.duration.complex}ms ease-in-out`
-  }
+  },
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    boxSizing: 'border-box',
+  },
 }))
 
 const TheLayout = ({ children }) => {
 
   const classes = useStyles()
+
   return(
     <Paper className={classes.root}>
-      <Grid container>
+      <Grid className={classes.container}>
         <Grid item xs={0} md={1}/>
         <Grid item xs={12} md={10}>
           { children }

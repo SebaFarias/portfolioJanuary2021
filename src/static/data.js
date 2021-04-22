@@ -38,7 +38,7 @@ const data = {
       content: {
         description: " Surtitech presta el servicio de Telemetría de más de 3.000 centrales de GLP pertenecientes a Abastible a lo largo de todo Chile. Como Regional Manager, estaba a cargo de la operación de las centrales ubicadas entre Arica y Parinacota y la región de El Maule",
         responsabilities: {
-          routes: "",
+          routes: "https://aiut.com/en/solutions/iot/iot-systems-for-lpg/",
           providers: "",
           client: "",
           inventory: "",

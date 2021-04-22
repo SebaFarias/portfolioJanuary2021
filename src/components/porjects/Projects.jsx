@@ -98,63 +98,65 @@ const Projects = () => {
     return true
   }
   return (
-    <Paper className={classes.root}>
-      <Grid container alignContent='center' justify='center' spacing={2}>
-        <Grid item xs={12}>
-          <Typography variant='h2' color='primary' align='center'>Projects</Typography>
-        </Grid>
-        <form className={classes.fullWidth} onSubmit={addFilter}>
-          <Grid container xs={12} alignItems='center'>
-            <Grid item xs={10} sm={11}>
-              <FormControl fullWidth className={classes.searchBar} variant="outlined">
-                <InputLabel htmlFor="search-bar">{lang.search}</InputLabel>
-                <OutlinedInput
-                  id="search-bar"
-                  value={newFilter}
-                  onChange={handleSearchbarChange}
-                  endAdornment={<InputAdornment position="end"><Search/></InputAdornment>}
-                  labelWidth={60}
-                />
-              </FormControl>
-            </Grid>
-            <Grid item xs={2} sm={1} className={classes.addBtnContainer}>
-              <IconButton color='secondary' type='submit'>
-                <AddCircle/>
-              </IconButton>
-            </Grid>
-          </Grid>
-        </form>
-        {filters.length < 1? '':
-        <>
-          <Typography variant='body1' color='primary' align='center'>{`Filtros:`}</Typography>
+    <section id='projects'>
+      <Paper className={classes.root}>
+        <Grid container alignContent='center' justify='center' spacing={2}>
           <Grid item xs={12}>
-            <Paper component='ul' className={classes.filtersContainer} elevation10>
-                {filters.map( filter => {
-                  return(
-                    <li key={`${filter}-chip`}>
-                      <Chip
-                        label={filter}
-                        onDelete={()=>{handleDelete(filter)}}
-                        className={classes.chip}
-                        variant="outlined"
-                        />
-                    </li>
-                  )
-                })}
-            </Paper>
+            <Typography variant='h2' color='primary' align='center'>Projects</Typography>
           </Grid>
-        </>}        
-      </Grid>
-      <Grid container alignItems='center' justify='center' spacing={4} className={classes.searchBar}>
-          {projects.map( ( project , index ) => {
-            if(applyFilters( project )){
-              return (
-                <ProjectCard project={project} divider={index>0}/>
-              )
-            }
-          })}
-      </Grid>
-    </Paper>
+          <form className={classes.fullWidth} onSubmit={addFilter}>
+            <Grid container xs={12} alignItems='center'>
+              <Grid item xs={10} sm={11}>
+                <FormControl fullWidth className={classes.searchBar} variant="outlined">
+                  <InputLabel htmlFor="search-bar">{lang.projects.search}</InputLabel>
+                  <OutlinedInput
+                    id="search-bar"
+                    value={newFilter}
+                    onChange={handleSearchbarChange}
+                    endAdornment={<InputAdornment position="end"><Search/></InputAdornment>}
+                    labelWidth={60}
+                  />
+                </FormControl>
+              </Grid>
+              <Grid item xs={2} sm={1} className={classes.addBtnContainer}>
+                <IconButton color='secondary' type='submit'>
+                  <AddCircle/>
+                </IconButton>
+              </Grid>
+            </Grid>
+          </form>
+          {filters.length < 1? '':
+          <>
+            <Typography variant='body1' color='primary' align='center'>{`Filtros:`}</Typography>
+            <Grid item xs={12}>
+              <Paper component='ul' className={classes.filtersContainer} elevation10>
+                  {filters.map( filter => {
+                    return(
+                      <li key={`${filter}-chip`}>
+                        <Chip
+                          label={filter}
+                          onDelete={()=>{handleDelete(filter)}}
+                          className={classes.chip}
+                          variant="outlined"
+                          />
+                      </li>
+                    )
+                  })}
+              </Paper>
+            </Grid>
+          </>}        
+        </Grid>
+        <Grid container alignItems='center' justify='center' spacing={4} className={classes.searchBar}>
+            {projects.map( ( project , index ) => {
+              if(applyFilters( project )){
+                return (
+                  <ProjectCard project={project} divider={index>0}/>
+                )
+              }
+            })}
+        </Grid>
+      </Paper>
+    </section>
   )
 }
 

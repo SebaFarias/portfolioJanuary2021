@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import { AppBar, Button, IconButton, Toolbar, Typography, Hidden } from '@material-ui/core'
 import {makeStyles} from '@material-ui/core/styles'
 import { Description, Menu, Settings } from '@material-ui/icons'
-import Toggler from './Toggler'
 import SettingsMenu from './SettingsMenu'
 
 const useStyles = makeStyles((theme) => ({
@@ -11,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+    fontFamily: `'Lobster', cursive`,
   },
 }));
 
@@ -21,9 +21,6 @@ const navBar = ({themeToggler,langToggler}) =>{
   return(
     <AppBar position='sticky' id='nav-bar'>
       <Toolbar>
-          <IconButton color='inherit' className={classes.menuButton}>
-            <Menu/>  {/*Hamburguer Menu Icon*/}
-          </IconButton>
         <Typography variant='h6' className={classes.title}>
           Seba Farias
         </Typography>

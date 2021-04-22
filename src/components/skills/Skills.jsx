@@ -48,38 +48,40 @@ const Skills = () => {
   };
   
   return (
-    <Paper className={classes.root}>
-      <Grid container alignContent='center' justify='center' spacing={2}>
-        <Grid item xs={12}>
-          <Typography variant='h2' color='primary' align='center'>Skills</Typography>
-        </Grid>
-        <Grid item xs={12}>
-          {skillsList.map( (skill,skillIndex) => {
-            return <TabPanel value={value} index={skillIndex} skill={skill}></TabPanel>
-          })}
-          <Tabs
-            selectionFollowsFocus 
-            centered
-            variant="fullWidth"
-            value={value}
-            onChange={handleChange}
-            aria-label="Seba Farias's skills"
-            className={classes.tabs}
-            classes={{indicator:classes.indicator}}
-            >
+    <section id='skils'>
+      <Paper className={classes.root}>
+        <Grid container alignContent='center' justify='center' spacing={2}>
+          <Grid item xs={12}>
+            <Typography variant='h2' color='primary' align='center'>Skills</Typography>
+          </Grid>
+          <Grid item xs={12}>
             {skillsList.map( (skill,skillIndex) => {
-              return <Tab label={skill.label} {...a11yProps(skillIndex)} />
+              return <TabPanel value={value} index={skillIndex} skill={skill}></TabPanel>
             })}
-          </Tabs>
+            <Tabs
+              selectionFollowsFocus 
+              centered
+              variant="fullWidth"
+              value={value}
+              onChange={handleChange}
+              aria-label="Seba Farias's skills"
+              className={classes.tabs}
+              classes={{indicator:classes.indicator}}
+              >
+              {skillsList.map( (skill,skillIndex) => {
+                return <Tab label={skill.label} {...a11yProps(skillIndex)} />
+              })}
+            </Tabs>
+          </Grid>
         </Grid>
-      </Grid>
-    </Paper>
+      </Paper>
+    </section>
   )
 }
 
 const TabPanel = (props) => {
   const { skill, value, index, ...other } = props;
-
+  
   return (
     <div
       role="tabpanel"
