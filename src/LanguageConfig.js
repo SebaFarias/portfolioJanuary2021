@@ -11,6 +11,9 @@ const ENGLISH = {
     message: 'Message',
     subject: 'Subject',
     send: 'Send Message',
+    sending: 'Sending...',
+    title: 'Contact me',
+    description: 'Send me a message. I will answer soon',
   },
   hero:{
     title: "Full-Stack Developer",
@@ -37,6 +40,9 @@ const SPANISH = {
     message: 'Mensaje',
     subject: 'Asunto',
     send: 'Enviar Mensaje',
+    sending: 'Enviando...',
+    title:'Contáctame',
+    description: 'Enviame un mensaje y te contestaré en breve',
   },
   hero:{
     title:"Desarrollador Full-Stack",

@@ -5,6 +5,7 @@ import {
   GitHub,
   LinkedIn,
   Mail,
+  WhatsApp,
 } from '@material-ui/icons';
 import {
   Box,
@@ -60,6 +61,13 @@ const Socials = () => {
       target='_blank'
     >
       <LinkedIn/>
+    </IconButton>
+    <IconButton 
+      aria-label="WhatsApp"
+      href='https://api.whatsapp.com/send/?phone=+56982008391'
+      target='_blank'
+    >
+      <WhatsApp/>
     </IconButton>
   </Box>
 }
