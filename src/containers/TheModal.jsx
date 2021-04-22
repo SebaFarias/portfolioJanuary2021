@@ -28,6 +28,8 @@ const TheModal = () => {
     open={modal.open}
     onClose={modalController.closeModal}
     className={classes.root}
+    aria-labelledby="modal-title"
+    aria-describedby="modal-description"
   >
     <Paper className={ classes.container }>
       { modal.body }
