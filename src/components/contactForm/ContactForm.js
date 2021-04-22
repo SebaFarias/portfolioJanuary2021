@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { useForm } from 'react-hook-form'
 import SendIcon from '@material-ui/icons/Send';
 import {
+  Box,
   Button,
   FormControl,
   Grid,
@@ -21,16 +22,34 @@ const useStyles = makeStyles( ( theme ) => ({
     width: '100%',
     height: '100%',
   },
-  y100:{
-    height: '100%',
-  },
   title: {
-    margin: `0 auto auto`,
+
+  },
+  formControlContainer:{
+    margin: `${theme.spacing(1)}px auto`,
+    padding: 0,
+    width: '100%',
+  },
+  inputsContainer: {
+    margin: 'auto',
+    [theme.breakpoints.up('md')]: {
+      flexDirection: 'row',
+    },
+  },
+  halfs:{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    padding: 0,
+  },
+  emailContainer: {
+    margin: `${theme.spacing(1)}px auto`,
   },
   button: {
-    margin: `auto auto 0`,
+    margin: `0 auto`,
     [theme.breakpoints.down('xs')]:{
-      margin: `auto ${theme.spacing(1)}px 0`,
+      margin: `0 ${theme.spacing(1)}px`,
       width: '100%',
     }
   },
@@ -60,67 +79,62 @@ const ContactForm = () => {
 
   return(
     <form className={ classes.root } onSubmit={ handleSubmit( onSubmit ) }>
-      <Grid container spacing={2} className={classes.y100}>
-        <Grid item xs='12' className={classes.title}>
+        <Box className={classes.title} >
           <Typography           
             id="modal-title"
             variant='h3'
+            color='primary'
             align='center'
           >
             {lang.contact.title}
           </Typography>
           <Typography
             id="modal-description"
-            variant='body1'
+            variant='h6'
             align='center'
           >
             {lang.contact.description}
           </Typography>
-        </Grid>
-        <Grid item container xs={12} spacing={2}>
-          <Grid itemxs={12} md={6}>
-            <FormControl fullWidth variant="outlined">
-              <InputLabel htmlFor="search-bar">{lang.contact.message}</InputLabel>
+        </Box>
+        <Grid item container xs={12} spacing={1} className={classes.inputsContainer}>
+          <Grid item xs={12} md={6} justifyContent='center' className={classes.halfs}>
+            <FormControl fullWidth variant="outlined" className={classes.formControlContainer}>
+              <InputLabel htmlFor="contact-message">{lang.contact.message}</InputLabel>
               <OutlinedInput
-                id="search-bar"
+                id="contact-message"
                 inputProps={{...register("message")}}
+                aria-label='message'
                 labelWidth={60}
                 multiline
                 rows={4}
               />
             </FormControl>
           </Grid>
-          <Grid item xs={12} md={6} className={classes.y100}>
-            <Grid item xs={12}>
-              <FormControl fullWidth className={classes.name} variant="outlined">
-                <InputLabel htmlFor="search-bar">{lang.contact.name}</InputLabel>
-                <OutlinedInput
-                  id="search-bar"
-                  inputProps={{...register("name")}}
-                  labelWidth={60}
-                />
-              </FormControl>
-            </Grid>
-            <Grid item xs={12}>
-              <FormControl fullWidth variant="outlined">
-                <InputLabel htmlFor="search-bar">{lang.contact.mail}</InputLabel>
-                <OutlinedInput
-                  id="search-bar"
-                  inputProps={{...register("mail")}}
-                  labelWidth={60}
-                />
-              </FormControl>
-            </Grid>
-            <Grid item xs={12}> 
-              <FormControl fullWidth className={classes.name} variant="outlined">
-                <InputLabel htmlFor="search-bar">{lang.contact.subject}</InputLabel>
-                <OutlinedInput
-                  id="search-bar"
-                  inputProps={{...register("subject")}}
-                  labelWidth={60}
-                />
-              </FormControl>
-            </Grid>
+          <Grid item container xs={12} md={6} className={classes.halfs}>
+            <FormControl fullWidth variant="outlined" className={classes.formControlContainer}>
+              <InputLabel htmlFor="contact-name">{lang.contact.name}</InputLabel>
+              <OutlinedInput
+                id="contact-name"
+                inputProps={{...register("name")}}
+                labelWidth={60}
+              />
+            </FormControl>
+            <FormControl fullWidth variant="outlined" className={classes.formControlContainer}>
+              <InputLabel htmlFor="search-bar">{lang.contact.mail}</InputLabel>
+              <OutlinedInput
+                id="search-bar"
+                inputProps={{...register("mail")}}
+                labelWidth={60}
+              />
+            </FormControl>
+            <FormControl fullWidth className={classes.formControlContainer} variant="outlined">
+              <InputLabel htmlFor="search-bar">{lang.contact.subject}</InputLabel>
+              <OutlinedInput
+                id="search-bar"
+                inputProps={{...register("subject")}}
+                labelWidth={60}
+              />
+            </FormControl>
           </Grid>
         </Grid>
           <Button            
@@ -133,7 +147,6 @@ const ContactForm = () => {
           >
             {submitting?lang.contact.sending:lang.contact.send}
           </Button>
-      </Grid>
     </form>
   )
 }
